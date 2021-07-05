@@ -1,4 +1,4 @@
-package week2;
+package Day2;
 
 public class CourseManager {
 	public void getCourseDetails(Course course) {

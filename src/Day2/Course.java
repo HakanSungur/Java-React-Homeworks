@@ -1,4 +1,4 @@
-package week2;
+package Day2;
 
 import java.util.Date;
 

@@ -1,4 +1,4 @@
-package week3;
+package Day3;
 
 public class InstructorManager extends UserManager {
 

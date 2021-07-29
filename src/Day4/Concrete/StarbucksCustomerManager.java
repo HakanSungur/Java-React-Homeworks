@@ -1,7 +1,6 @@
 package Day4.Concrete;
 import java.rmi.RemoteException;
 
-import Day4.Abstract.BaseCustomerManager;
 import Day4.Abstract.CustomerCheckService;
 import Day4.Entities.Customer;
 

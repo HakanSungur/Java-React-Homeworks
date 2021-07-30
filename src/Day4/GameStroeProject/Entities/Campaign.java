@@ -6,12 +6,14 @@ public class Campaign {
 
 	private int id;
 	private String campaignName;
+	private int discount;
 	private LocalDate startDate;
 	private LocalDate endDate;
-	public Campaign(int id, String campaignName, LocalDate startDate, LocalDate endDate) {
+	public Campaign(int id, String campaignName,int discount, LocalDate startDate, LocalDate endDate) {
 		super();
 		this.id = id;
 		this.campaignName = campaignName;
+		this.discount=discount;
 		this.startDate = startDate;
 		this.endDate = endDate;
 	}
@@ -26,6 +28,12 @@ public class Campaign {
 	}
 	public void setCampaignName(String campaignName) {
 		this.campaignName = campaignName;
+	}
+	public int getDiscount() {
+		return discount;
+	}
+	public void setDiscount(int discount) {
+		this.discount=discount;
 	}
 	public LocalDate getStartDate() {
 		return startDate;

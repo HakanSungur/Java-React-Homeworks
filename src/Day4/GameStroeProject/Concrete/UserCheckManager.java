@@ -7,6 +7,6 @@ public class UserCheckManager {
 
 	public boolean CheckIfRealPerson(User user) {
 		
-		return true;
+		return false;
 	}
 }

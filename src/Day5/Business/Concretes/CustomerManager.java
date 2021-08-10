@@ -13,6 +13,15 @@ public class CustomerManager implements CustomerService {
 	CustomerDao customerDao;
 	VerificationService verificationService;
 	
+	public CustomerManager(CustomerCheckService customerCheckService, CustomerDao customerDao,
+			VerificationService verificationService) {
+		super();
+		this.customerCheckService = customerCheckService;
+		this.customerDao = customerDao;
+		this.verificationService = verificationService;
+	}
+
+	
 	
 	@Override
 	public void signUp(Customer customer) {
@@ -27,8 +36,15 @@ public class CustomerManager implements CustomerService {
 	@Override
 	public void signIn(Customer customer) {
 		verificationService.verifyMail(customer.getEmail());
-		if(customerDao.getEmail(customer.getEmail())&& customerDao.getPassword(customer.getPassword()))
+		if(customerDao.getEmail(customer.getEmail())&& customerDao.getPassword(customer.getPassword())&& verificationService.isVerificated(customer.getEmail())==true ) {
+			System.out.println("Kullanýcý giriþi baþarýlý.");
+		}else if(verificationService.isVerificated(customer.getEmail())==false){
+			System.out.println("Mail adresi kullanýlmýyor. Lütfen mail adresinizi kontrol ediniz.");
+		}else {
+			System.out.println("Kullanýcý giriþ bilgileri yanlýþ lütfen kontrol ediniz.");
+		}
 	}
 
+	
 	
 }
